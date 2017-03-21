@@ -1,0 +1,47 @@
+package com.mycompany.flightstatuslistview.homeScreen;
+
+import android.util.Log;
+
+/**
+ * Created by mkaratadipalayam on 10/10/16.
+ */
+
+interface HomeInteractorOutput {
+
+    //func presentHomeMetaData(_ response: HomeResponse)
+    public void presentHomeMetaData(HomeResponse response);
+}
+
+public class HomeInteractor implements HomeActivityOutput{
+
+    public HomeInteractorOutput output;
+
+
+
+    public FlightWorkerInput flightWorkerInput;
+
+
+    public FlightWorkerInput getFlightWorkerInput() {
+        if (flightWorkerInput == null) return new FlightWorker();
+        return flightWorkerInput;
+    }
+
+    public void setFlightWorkerInput(FlightWorkerInput flightWorkerInput) {
+        this.flightWorkerInput = flightWorkerInput;
+    }
+
+    public static String TAG = HomeInteractor.class.getSimpleName();
+
+    @Override
+    public void fetchHomeMetaData(HomeRequest request) {
+        flightWorkerInput = getFlightWorkerInput();
+        HomeResponse homeResponse = new HomeResponse();
+        if(request.isFutureTrips == true) {
+            homeResponse.listOfFlights = flightWorkerInput.getFutureFlights();
+        } else {
+            homeResponse.listOfFlights = flightWorkerInput.getPastFlights();
+        }
+        Log.e(TAG,"In method fetchHomeMetaData");
+        output.presentHomeMetaData(homeResponse);
+    }
+}
