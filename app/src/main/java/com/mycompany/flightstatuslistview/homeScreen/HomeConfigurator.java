@@ -14,7 +14,7 @@ public enum HomeConfigurator {
         router.activity = new WeakReference<>(activity);
 
         HomePresenter presenter = new HomePresenter();
-        presenter.output = new WeakReference<HomePresenterOutput>(activity);
+        presenter.output = new WeakReference<HomeActivityInput>(activity);
 
         HomeInteractor interactor = new HomeInteractor();
         interactor.output = presenter;

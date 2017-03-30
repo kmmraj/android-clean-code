@@ -11,12 +11,13 @@ interface HomeInteractorOutput {
     //func presentHomeMetaData(_ response: HomeResponse)
     public void presentHomeMetaData(HomeResponse response);
 }
+interface HomeInteractorInput {
+    public void fetchHomeMetaData(HomeRequest request);
+}
 
-public class HomeInteractor implements HomeActivityOutput{
+public class HomeInteractor implements HomeInteractorInput{
 
-    public HomeInteractorOutput output;
-
-
+    public HomePresenterInput output;
 
     public FlightWorkerInput flightWorkerInput;
 

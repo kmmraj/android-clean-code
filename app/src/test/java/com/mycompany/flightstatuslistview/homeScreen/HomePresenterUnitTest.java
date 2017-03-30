@@ -38,7 +38,7 @@ public class HomePresenterUnitTest {
         homeResponse.listOfFlights = new FlightWorker().getFutureFlights();
 
         HomePresenterOutputSpy homePresenterOutputSpy = new HomePresenterOutputSpy();
-        homePresenter.output = new WeakReference<HomePresenterOutput>(homePresenterOutputSpy);
+        homePresenter.output = new WeakReference<HomeActivityInput>(homePresenterOutputSpy);
 
         //When
         homePresenter.presentHomeMetaData(homeResponse);
@@ -55,7 +55,7 @@ public class HomePresenterUnitTest {
         homeResponse.listOfFlights = null;
 
         HomePresenterOutputSpy homePresenterOutputSpy = new HomePresenterOutputSpy();
-        homePresenter.output = new WeakReference<HomePresenterOutput>(homePresenterOutputSpy);
+        homePresenter.output = new WeakReference<HomeActivityInput>(homePresenterOutputSpy);
 
         //When
         homePresenter.presentHomeMetaData(homeResponse);
@@ -85,7 +85,7 @@ public class HomePresenterUnitTest {
         homeResponse.listOfFlights = flightsList;
 
         HomePresenterOutputSpy homePresenterOutputSpy = new HomePresenterOutputSpy();
-        homePresenter.output = new WeakReference<HomePresenterOutput>(homePresenterOutputSpy);
+        homePresenter.output = new WeakReference<HomeActivityInput>(homePresenterOutputSpy);
 
 
         //When
@@ -124,7 +124,7 @@ public class HomePresenterUnitTest {
         homeResponse.listOfFlights = flightsList;
 
         HomePresenterOutputSpy homePresenterOutputSpy = new HomePresenterOutputSpy();
-        homePresenter.output = new WeakReference<HomePresenterOutput>(homePresenterOutputSpy);
+        homePresenter.output = new WeakReference<HomeActivityInput>(homePresenterOutputSpy);
 
 
         //When
@@ -136,13 +136,13 @@ public class HomePresenterUnitTest {
 
         //Then
         // "It has been " + daysDiff + " days since you flew";
-        String ExpectedText = "It has been " + 10 + " days since you flew";
+        String ExpectedText = "It has been " + 11 + " days since you flew";
         String ActualText = homePresenterOutputSpy.homeViewModelCopy.listOfFlights.get(0).noOfDaysToFly;
         Assert.assertEquals("When current date is 2016/10/12 & Flying Date is 2016/10/01 Then no of days should be 11",ExpectedText,ActualText);
 
     }
 
-    private class HomePresenterOutputSpy implements HomePresenterOutput {
+    private class HomePresenterOutputSpy implements HomeActivityInput {
         public boolean isdisplayHomeMetaDataCalled = false;
         public HomeViewModel homeViewModelCopy;
         @Override

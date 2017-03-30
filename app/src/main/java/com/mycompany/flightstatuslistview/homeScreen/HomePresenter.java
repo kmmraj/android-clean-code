@@ -15,12 +15,12 @@ interface HomePresenterInput {
     public void presentHomeMetaData(HomeResponse response);
 }
 
-public class HomePresenter implements HomePresenterInput,HomeInteractorOutput {
+public class HomePresenter implements HomePresenterInput {
 
     public static String TAG = HomePresenter.class.getSimpleName();
 
     //weak var output: HomePresenterOutput!
-    public WeakReference<HomePresenterOutput> output;
+    public WeakReference<HomeActivityInput> output;
     private Calendar currentTime;
 
 

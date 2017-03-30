@@ -1,13 +1,9 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-
 buildscript {
     repositories {
         jcenter()
-        maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.1'
-
+        classpath 'com.android.tools.build:gradle:2.3.0'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -15,24 +11,15 @@ buildscript {
 }
 
 allprojects {
+    String osName = System.getProperty("os.name").toLowerCase();
+    if (osName.contains("windows")) {
+        buildDir = "C:/tmp/${rootProject.name}/${project.name}"
+    }
     repositories {
         jcenter()
-        mavenCentral()
-        maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
-
     }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
-}
-
-apply plugin: 'maven'
-
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            repository(url: "file:///~.m2/")
-        }
-    }
 }

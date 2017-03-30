@@ -61,7 +61,7 @@ public class HomeActivityUnitTest {
 
 
 
-    private class HomeActivityOutputSpy implements HomeActivityOutput {
+    private class HomeActivityOutputSpy implements HomeInteractorInput {
 
         boolean fetchHomeMetaDataIsCalled = false;
         HomeRequest homeRequestCopy;

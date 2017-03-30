@@ -25,14 +25,11 @@ import java.util.ArrayList;
     public void fetchHomeMetaData(HomeRequest request);
 }
 
-public class HomeActivity extends AppCompatActivity
-        implements //AdapterView.OnItemClickListener,
-        HomeActivityInput,
-        HomePresenterOutput {
+public class HomeActivity extends AppCompatActivity implements HomeActivityInput {
 
     ArrayList<FlightViewModel> listOfVMFlights;
 
-    HomeActivityOutput output;
+    HomeInteractorInput output;
     HomeRouter router;
 
     public static String TAG = HomeActivity.class.getSimpleName();

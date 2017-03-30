@@ -88,7 +88,7 @@ public class HomeInteractorUnitTest {
                 flightWorkerInputSpy.isgetPastFlightsMethodCalled);
     }
 
-    private class HomeInteractorOutputSpy implements HomeInteractorOutput {
+    private class HomeInteractorOutputSpy implements HomePresenterInput {
 
         boolean presentHomeMetaDataIsCalled = false;
         HomeResponse homeResponseCopy;
