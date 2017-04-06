@@ -22,23 +22,19 @@ import org.robolectric.util.ActivityController;
 @Config(constants = BuildConfig.class, manifest = "app/src/main/AndroidManifest.xml", sdk = 21)
 public class HomeActivityUnitTest {
     @Before
-    public void setUp(){
-
-    }
+    public void setUp(){}
     @After
-    public void tearDown(){
-
-    }
+    public void tearDown(){}
 
 
     @Test
     public void HomeActivity_ShouldNOT_be_Null(){
         //Given
-        HomeActivity homeActivity = Robolectric.setupActivity(HomeActivity.class);
+        HomeActivity activity = Robolectric.setupActivity(HomeActivity.class);
         //When
 
         // Then
-        Assert.assertNotNull(homeActivity);
+        Assert.assertNotNull(activity);
     }
 
     @Test
@@ -54,10 +50,23 @@ public class HomeActivityUnitTest {
         homeActivity.fetchMetaData();
 
         //Then
-        Assert.assertNotNull(homeActivity);
         Assert.assertTrue(homeActivityOutputSpy.fetchHomeMetaDataIsCalled);
   }
 
+    @Test
+    public void onCreate_Calls_fetchHomeMetaData_withCorrectData(){
+        //Given
+        HomeActivityOutputSpy homeActivityOutputSpy = new HomeActivityOutputSpy();
+        HomeActivity homeActivity = Robolectric.setupActivity(HomeActivity.class);
+        homeActivity.output = homeActivityOutputSpy;
+
+        //When
+        homeActivity.fetchMetaData();
+
+        //Then
+        Assert.assertNotNull(homeActivity);
+        Assert.assertTrue(homeActivityOutputSpy.homeRequestCopy.isFutureTrips);
+    }
 
 
 

@@ -6,11 +6,6 @@ import android.util.Log;
  * Created by mkaratadipalayam on 10/10/16.
  */
 
-interface HomeInteractorOutput {
-
-    //func presentHomeMetaData(_ response: HomeResponse)
-    public void presentHomeMetaData(HomeResponse response);
-}
 interface HomeInteractorInput {
     public void fetchHomeMetaData(HomeRequest request);
 }
@@ -42,6 +37,7 @@ public class HomeInteractor implements HomeInteractorInput{
         } else {
             homeResponse.listOfFlights = flightWorkerInput.getPastFlights();
         }
+        //TODO : Add failure case here
         Log.e(TAG,"In method fetchHomeMetaData");
         output.presentHomeMetaData(homeResponse);
     }

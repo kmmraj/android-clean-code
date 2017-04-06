@@ -21,16 +21,14 @@ import java.util.ArrayList;
     public void displayHomeMetaData(HomeViewModel viewModel);
 }
 
- interface HomeActivityOutput {
-    public void fetchHomeMetaData(HomeRequest request);
-}
+
 
 public class HomeActivity extends AppCompatActivity implements HomeActivityInput {
 
-    ArrayList<FlightViewModel> listOfVMFlights;
+    public ArrayList<FlightViewModel> listOfVMFlights;
 
-    HomeInteractorInput output;
-    HomeRouter router;
+    protected HomeInteractorInput output;
+    protected HomeRouter router;
 
     public static String TAG = HomeActivity.class.getSimpleName();
 
@@ -43,13 +41,15 @@ public class HomeActivity extends AppCompatActivity implements HomeActivityInput
 
         HomeConfigurator.INSTANCE.configure(this);
         fetchMetaData();
+        createFlightListView();
     }
 
     public void fetchMetaData() {
+        // create Request and set the needed input
         HomeRequest homeRequest = new HomeRequest();
-        homeRequest.isFutureTrips = true; //TODO remove this hardcoding
+        homeRequest.isFutureTrips = true;
+        // Call the output to fetch the data
         output.fetchHomeMetaData(homeRequest);
-        createFlightListView();
     }
 
     private void createFlightListView() {

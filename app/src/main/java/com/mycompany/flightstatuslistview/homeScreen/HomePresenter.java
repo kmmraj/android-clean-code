@@ -19,7 +19,6 @@ public class HomePresenter implements HomePresenterInput {
 
     public static String TAG = HomePresenter.class.getSimpleName();
 
-    //weak var output: HomePresenterOutput!
     public WeakReference<HomeActivityInput> output;
     private Calendar currentTime;
 
