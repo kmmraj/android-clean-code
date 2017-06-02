@@ -1,8 +1,9 @@
 # Test Driven Android Development - Clean Code Android
 #### Inspired from [Clean Architecture][1] from Uncle Bob, [Google Android samples][3]  and [Clean Swift][2]
 ##### This design is chosen with a singular focus - testablity.
+##### Want to learn about Android Clean Code ? follow [here][7]
 
-## Quick Start
+## Quick Start 
 1. Clone and import it to Android Studio
 2. It should work with out any issues
 
@@ -38,3 +39,4 @@ This project ideas aren't new in any way. Credit has to be given to the followin
 [4]: https://riggaroo.co.za/custom-file-templates-android-studio/
 [5]: https://github.com/kmmraj/androidcleancode-generator
 [6]: ./LICENSE
+[7]: https://medium.com/@kmmraj/android-clean-code-part-1-c66da6551d1
