@@ -28,9 +28,9 @@ Welcome to contribute, feel free to change and open a PR.
 
 I'd also like to add that this project ideas aren't new in any way. Credit has to be given to the following projects, listed in autobiographical order.
 
-[Clean Architecture] [1]
+[Clean Architecture][1]
 
-[clean-swift] [2]
+[clean-swift][2]
 
 [1]: https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html
 [2]: http://clean-swift.com
