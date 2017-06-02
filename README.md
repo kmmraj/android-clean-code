@@ -5,12 +5,9 @@
 
 
 ## Quick Start
-1. Clone and import it to Android Studio
+1. Clone and open in Android Studio
 2. It should work with out any issues
 
-Note: Mac Users
-1. If Android Studio refuse to work with out .m2 folder at root level, create such folder and execute `sudo chmod -R 766 .m2`
-2. Start the Android Studio as sudo user ( Go to Application folder and run `sudo open Android\ Studio.app/` )
 
 ## Whats Next ?
 Want to use it your projects - bothered about the too much boilerplate code ? You can generate them with in few seconds - check [here][5]
@@ -24,7 +21,7 @@ Welcome to contribute, feel free to change and open a PR.
 #### TODO
 1. Create example test cases for Router
 2. Create code and test examples for the detail page.
-2. Create template based auto code generation similar to clean-swift - Done check [here][5]. Inspired from [this link][4]
+3. Create example for Fragments
 
 #### Inspiration
 
