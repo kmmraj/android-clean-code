@@ -3,7 +3,6 @@
 ##### This design is chosen with a singular focus - testablity.
 ##### Want to learn about Android Clean Code ? follow [here][7]
 
-![alt text] (https://github.com/kmmraj/androidcleancode-generator/blob/master/acc_android_studio.png)
 
 ## Quick Start
 1. Clone and import it to Android Studio
