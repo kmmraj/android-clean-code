@@ -26,7 +26,7 @@ Welcome to contribute, feel free to change and open a PR.
 
 #### Inspiration
 
-I'd also like to add that this project ideas aren't new in any way. Credit has to be given to the following projects, listed in autobiographical order.
+This project ideas aren't new in any way. Credit has to be given to the following projects, listed in autobiographical order.
 
 [Clean Architecture][1]
 
@@ -36,5 +36,5 @@ I'd also like to add that this project ideas aren't new in any way. Credit has t
 [2]: http://clean-swift.com
 [3]: https://github.com/googlesamples/android-testing
 [4]: https://riggaroo.co.za/custom-file-templates-android-studio/
-[5]: https://github.com
+[5]: https://github.com/kmmraj/androidcleancode-generator
 [6]: ./LICENSE
