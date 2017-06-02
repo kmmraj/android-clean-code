@@ -2,6 +2,8 @@ package com.mycompany.flightstatuslistview.homeScreen;
 
 import android.util.Log;
 
+import com.mycompany.flightstatuslistview.ArrayEmptyException;
+
 /**
  * Created by mkaratadipalayam on 10/10/16.
  */
@@ -30,6 +32,7 @@ public class HomeInteractor implements HomeInteractorInput{
 
     @Override
     public void fetchHomeMetaData(HomeRequest request) {
+        Log.e(TAG,"In method fetchHomeMetaData");
         flightWorkerInput = getFlightWorkerInput();
         HomeResponse homeResponse = new HomeResponse();
         if(request.isFutureTrips == true) {
@@ -38,7 +41,10 @@ public class HomeInteractor implements HomeInteractorInput{
             homeResponse.listOfFlights = flightWorkerInput.getPastFlights();
         }
         //TODO : Add failure case here
-        Log.e(TAG,"In method fetchHomeMetaData");
+        if(null == homeResponse.listOfFlights || homeResponse.listOfFlights.isEmpty()) {
+            throw new ArrayEmptyException("Empty Flight List");
+        }
+
         output.presentHomeMetaData(homeResponse);
     }
 }

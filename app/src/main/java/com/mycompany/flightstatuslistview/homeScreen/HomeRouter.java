@@ -17,7 +17,7 @@ import java.lang.ref.WeakReference;
 
 
 interface HomeRouterInput{
-    public Intent navigateToSomeWhere(int position);
+    public Intent determineNextScreen(int position);
     public void passDataToNextScene(int position, Intent intent);
 }
 
@@ -27,11 +27,9 @@ public class HomeRouter implements HomeRouterInput, AdapterView.OnItemClickListe
     public WeakReference<HomeActivity> activity;
 
 
-
-
     @NonNull
     @Override
-    public Intent navigateToSomeWhere(int position) {
+    public Intent determineNextScreen(int position) {
         //Based on the position or someother data decide what is the next scene
         Intent intent = new Intent(activity.get(),FlightDetailActivity.class);
         return intent;
@@ -47,7 +45,7 @@ public class HomeRouter implements HomeRouterInput, AdapterView.OnItemClickListe
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
        // Log.e(TAG, "onItemClick() called with: parent = [" + parent + "], view = [" + view + "], position = [" + position + "], id = [" + id + "]");
-        Intent intent = navigateToSomeWhere(position);
+        Intent intent = determineNextScreen(position);
         passDataToNextScene(position, intent);
         activity.get().startActivity(intent);
     }

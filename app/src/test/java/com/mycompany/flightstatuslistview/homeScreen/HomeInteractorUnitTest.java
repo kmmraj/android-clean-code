@@ -1,5 +1,8 @@
 package com.mycompany.flightstatuslistview.homeScreen;
 
+import android.support.annotation.NonNull;
+
+import com.mycompany.flightstatuslistview.ArrayEmptyException;
 import com.mycompany.flightstatuslistview.BuildConfig;
 import com.mycompany.flightstatuslistview.FlightModel;
 
@@ -88,6 +91,27 @@ public class HomeInteractorUnitTest {
                 flightWorkerInputSpy.isgetPastFlightsMethodCalled);
     }
 
+
+    @Test(expected = ArrayEmptyException.class)
+    public void fetchHomeMetaData_fetchingNull_shouldThrowArrayEmptyException(){
+        //Given
+        HomeInteractor homeInteractor = new HomeInteractor();
+        HomeRequest homeRequest = new HomeRequest();
+        homeRequest.isFutureTrips = false;
+
+        //Setup TestDoubles
+        HomeInteractorOutputSpy homeInteractorOutputSpy = new HomeInteractorOutputSpy();
+        homeInteractor.output = homeInteractorOutputSpy;
+        FlightWorkerInputReturnNullSpy flightWorkerInputReturnNullSpy = new FlightWorkerInputReturnNullSpy();
+        homeInteractor.setFlightWorkerInput(flightWorkerInputReturnNullSpy);
+
+        //When
+        homeInteractor.fetchHomeMetaData(homeRequest);
+
+        //Then
+//      // Check for ArrayEmptyException -- See this method Annotation
+    }
+
     private class HomeInteractorOutputSpy implements HomePresenterInput {
 
         boolean presentHomeMetaDataIsCalled = false;
@@ -107,6 +131,39 @@ public class HomeInteractorUnitTest {
         @Override
         public ArrayList<FlightModel> getFutureFlights() {
             isgetFlightsMethodCalled = true;
+            ArrayList<FlightModel> flightsList = getFlightModels();
+            return flightsList;
+        }
+
+        @Override
+        public ArrayList<FlightModel> getPastFlights() {
+            isgetPastFlightsMethodCalled = true;
+            ArrayList<FlightModel> flightsList = getFlightModels();
+            return flightsList;
+        }
+
+        @NonNull
+        private ArrayList<FlightModel> getFlightModels() {
+            ArrayList<FlightModel> flightsList = new ArrayList<>();
+            FlightModel flight1 = new FlightModel();
+            flight1.flightName = "9Z 231";
+            flight1.startingTime = "2016/10/31";
+            flight1.numberofSeats = "6";
+            flight1.gate = "33";
+            flight1.terminal = "T1";
+            flightsList.add(flight1);
+            return flightsList;
+        }
+    }
+
+    private class FlightWorkerInputReturnNullSpy implements FlightWorkerInput {
+
+        boolean isgetFlightsMethodCalled = false;
+        boolean isgetPastFlightsMethodCalled = false;
+
+        @Override
+        public ArrayList<FlightModel> getFutureFlights() {
+            isgetFlightsMethodCalled = true;
             return null;
         }
 
@@ -115,5 +172,5 @@ public class HomeInteractorUnitTest {
             isgetPastFlightsMethodCalled = true;
             return null;
         }
-    };
+    }
 }

@@ -20,7 +20,7 @@ public class FlightWorker implements FlightWorkerInput {
 
         FlightModel flight1 = new FlightModel();
         flight1.flightName = "9Z 231";
-        flight1.startingTime = "2016/10/31";
+        flight1.startingTime = "2017/10/31";
         flight1.numberofSeats = "6";
         flight1.gate = "33";
         flight1.terminal = "T1";
@@ -29,7 +29,7 @@ public class FlightWorker implements FlightWorkerInput {
 
         FlightModel flight2 = new FlightModel();
         flight2.flightName = "9Z 15";
-        flight2.startingTime = "2016/11/31";
+        flight2.startingTime = "2017/02/31";
         flight2.numberofSeats = "15";
         flight2.gate = "15";
         flight2.terminal = "T0";
@@ -37,7 +37,7 @@ public class FlightWorker implements FlightWorkerInput {
 
         FlightModel flight3 = new FlightModel();
         flight3.flightName = "9Z 142";
-        flight3.startingTime = "2016/12/31";
+        flight3.startingTime = "2017/12/31";
         flight3.numberofSeats = "33";
         flight3.gate = "6";
         flight3.terminal = "T2";

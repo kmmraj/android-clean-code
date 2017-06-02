@@ -1,6 +1,6 @@
 # Test Driven Android Development - Clean Code Android
 #### Inspired from [Clean Architecture][1] from Uncle Bob, [Google Android samples][3]  and [Clean Swift][2]
-##### There are be many awesome design architectures available - this design is choosen with a singular focus - testablity.
+##### This design is chosen with a singular focus - testablity.
 
 ## Quick Start
 1. Clone and import it to Android Studio
@@ -24,8 +24,13 @@ Welcome to contribute, feel free to change and open a PR.
 2. Create code and test examples for the detail page.
 2. Create template based auto code generation similar to clean-swift - Done check [here][5]. Inspired from [this link][4]
 
+#### Inspiration
 
+I'd also like to add that this project ideas aren't new in any way. Credit has to be given to the following projects, listed in autobiographical order.
 
+[Clean Architecture] [1]
+
+[clean-swift] [2]
 
 [1]: https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html
 [2]: http://clean-swift.com

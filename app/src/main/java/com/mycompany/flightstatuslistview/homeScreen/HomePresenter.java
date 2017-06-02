@@ -53,7 +53,7 @@ public class HomePresenter implements HomePresenterInput {
                 fvm.flightName = fm.flightName;
                 fvm.startingTime = fm.startingTime;
                 //Decoration
-                Calendar startingTime = getStartingTimeCalendar(fvm);
+                Calendar startingTime = getCalendar(fvm.startingTime);
                 long daysDiff = getDaysDiff(getCurrentTime().getTimeInMillis(),startingTime.getTimeInMillis());
                 setDaysFlyDecorationText(fvm, daysDiff);
 
@@ -75,16 +75,17 @@ public class HomePresenter implements HomePresenterInput {
     }
 
     @NonNull
-    private Calendar getStartingTimeCalendar(FlightViewModel fvm) {
-        int year = Integer.parseInt(fvm.startingTime.substring(0,4));
-        int month = Integer.parseInt(fvm.startingTime.substring(5,7));
-        int day = Integer.parseInt(fvm.startingTime.substring(8,10));
-
-
-
-        Calendar startingTime = Calendar.getInstance();
-        startingTime.set(year,month-1,day,0,0,0);
-        return startingTime;
+    private Calendar getCalendar(String date) {
+        //Date should be in the format YYYY/MM/DD if not return
+        if (date != null && !date.isEmpty() && date.length() == 10 ) {
+            int year = Integer.parseInt(date.substring(0, 4));
+            int month = Integer.parseInt(date.substring(5, 7));
+            int day = Integer.parseInt(date.substring(8, 10));
+            Calendar startingTime = Calendar.getInstance();
+            startingTime.set(year, month - 1, day, 0, 0, 0);
+            return startingTime;
+        }
+        return null;
     }
 
     private long getDaysDiff(long startTime,long endTime) {
