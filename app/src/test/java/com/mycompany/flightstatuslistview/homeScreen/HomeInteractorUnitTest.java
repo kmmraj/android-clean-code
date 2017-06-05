@@ -37,14 +37,15 @@ public class HomeInteractorUnitTest {
         HomeInteractor homeInteractor = new HomeInteractor();
         HomeRequest homeRequest = new HomeRequest();
         homeRequest.isFutureTrips = true;
-        HomeInteractorOutputSpy homeInteractorOutputSpy = new HomeInteractorOutputSpy();
-        homeInteractor.output = homeInteractorOutputSpy;
+        HomePresenterInputSpy homePresenterInputSpy = new HomePresenterInputSpy();
+        homeInteractor.output = homePresenterInputSpy;
         //When
         homeInteractor.fetchHomeMetaData(homeRequest);
 
         //Then
-        Assert.assertTrue("When the valid input is passed to HomeInteractor Then presentHomeMetaData should be called",
-                 homeInteractorOutputSpy.presentHomeMetaDataIsCalled);
+        Assert.assertTrue("When the valid input is passed to HomeInteractor " +
+                        "Then presentHomeMetaData should be called",
+                 homePresenterInputSpy.presentHomeMetaDataIsCalled);
     }
 
     @Test
@@ -55,8 +56,8 @@ public class HomeInteractorUnitTest {
         homeRequest.isFutureTrips = true;
 
         //Setup TestDoubles
-        HomeInteractorOutputSpy homeInteractorOutputSpy = new HomeInteractorOutputSpy();
-        homeInteractor.output = homeInteractorOutputSpy;
+        HomePresenterInputSpy homePresenterInputSpy = new HomePresenterInputSpy();
+        homeInteractor.output = homePresenterInputSpy;
         FlightWorkerInputSpy flightWorkerInputSpy = new FlightWorkerInputSpy();
         homeInteractor.setFlightWorkerInput(flightWorkerInputSpy);
 
@@ -77,8 +78,8 @@ public class HomeInteractorUnitTest {
         homeRequest.isFutureTrips = false;
 
         //Setup TestDoubles
-        HomeInteractorOutputSpy homeInteractorOutputSpy = new HomeInteractorOutputSpy();
-        homeInteractor.output = homeInteractorOutputSpy;
+        HomePresenterInputSpy homePresenterInputSpy = new HomePresenterInputSpy();
+        homeInteractor.output = homePresenterInputSpy;
         FlightWorkerInputSpy flightWorkerInputSpy = new FlightWorkerInputSpy();
         homeInteractor.setFlightWorkerInput(flightWorkerInputSpy);
 
@@ -100,8 +101,8 @@ public class HomeInteractorUnitTest {
         homeRequest.isFutureTrips = false;
 
         //Setup TestDoubles
-        HomeInteractorOutputSpy homeInteractorOutputSpy = new HomeInteractorOutputSpy();
-        homeInteractor.output = homeInteractorOutputSpy;
+        HomePresenterInputSpy homePresenterInputSpy = new HomePresenterInputSpy();
+        homeInteractor.output = homePresenterInputSpy;
         FlightWorkerInputReturnNullSpy flightWorkerInputReturnNullSpy = new FlightWorkerInputReturnNullSpy();
         homeInteractor.setFlightWorkerInput(flightWorkerInputReturnNullSpy);
 
@@ -112,7 +113,7 @@ public class HomeInteractorUnitTest {
 //      // Check for ArrayEmptyException -- See this method Annotation
     }
 
-    private class HomeInteractorOutputSpy implements HomePresenterInput {
+    private class HomePresenterInputSpy implements HomePresenterInput {
 
         boolean presentHomeMetaDataIsCalled = false;
         HomeResponse homeResponseCopy;
