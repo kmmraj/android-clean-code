@@ -1,3 +1,25 @@
 <resources>
-    <string name="app_name">FlightStatusListView</string>
+    <string name="app_name">MY TRIPS</string>
+    <string name="passenger_label">PASSENGER</string>
+    <string name="passenger_name">MR. MOHAN KARATS</string>
+    <string name="origin_code">BLR</string>
+    <string name="destination_code">CJB</string>
+    <string name="flight_code">9F 2465</string>
+    <string name="boarding_time_label">BOARDING TIME</string>
+    <string name="boarding_time">02:10 PM</string>
+    <string name="departure_time_label">DEPARTURE</string>
+    <string name="departure_time">02:40 PM</string>
+    <string name="arrival_time">03:10 PM</string>
+    <string name="arrival_time_label">ARRIVAL</string>
+    <string name="boarding_in_time">00:15</string>
+    <string name="boarding_in_label">BOARDING IN</string>
+    <string name="terminal_label">TERMINAL</string>
+    <string name="gate_label">GATE</string>
+    <string name="seat_label">SEAT</string>
+    <string name="terminal">1</string>
+    <string name="gate">6A</string>
+    <string name="seat">01A</string>
+    <string name="depature_date">DEPARTURE DATE</string>
+    <string name="depature_date_value">2018 Jan 15</string>
+
 </resources>

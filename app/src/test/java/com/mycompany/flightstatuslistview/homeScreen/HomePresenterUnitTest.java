@@ -1,5 +1,7 @@
 package com.mycompany.flightstatuslistview.homeScreen;
 
+import android.util.Log;
+
 import com.mycompany.flightstatuslistview.BuildConfig;
 import com.mycompany.flightstatuslistview.FlightModel;
 
@@ -21,6 +23,8 @@ import java.util.Calendar;
 @RunWith(RobolectricGradleTestRunner.class)
 @Config(constants = BuildConfig.class, manifest = "app/src/main/AndroidManifest.xml", sdk = 21)
 public class HomePresenterUnitTest {
+    public static String TAG = HomePresenterUnitTest.class.getSimpleName();
+
     @Before
     public void setUp(){
 
@@ -124,16 +128,18 @@ public class HomePresenterUnitTest {
 
         //When
         Calendar currentTime = Calendar.getInstance();
-        currentTime.set(2017,5,30,0,0,0);
+        //currentTime.set(2017,5,30,0,0,0);
+        currentTime.set(2017,5,30);
+        Log.e(TAG, "verify_HomePresenter_getDaysDiff_is_CalcualtedCorrectly_ForPastTrips: "+currentTime.toString() );
         homePresenter.setCurrentTime(currentTime);
         homePresenter.presentHomeMetaData(homeResponse);
 
 
         //Then
         // "It has been " + daysDiff + " days since you flew";
-        String ExpectedText = "It has been " + 271 + " days since you flew";
+        String ExpectedText = "It has been " + 272 + " days since you flew";
         String ActualText = homeActivityInputSpy.homeViewModelCopy.listOfFlights.get(0).noOfDaysToFly;
-        Assert.assertEquals("When current date is 2016/10/12 & Flying Date is 2016/10/01 Then no of days should be 271",ExpectedText,ActualText);
+        Assert.assertEquals("When current date is 2017/05/30 & Flying Date is 2016/10/01 Then no of days should be 271",ExpectedText,ActualText);
 
     }
 

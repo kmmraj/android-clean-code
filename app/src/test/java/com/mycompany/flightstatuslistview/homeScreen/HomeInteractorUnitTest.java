@@ -67,7 +67,7 @@ public class HomeInteractorUnitTest {
         //Then
         Assert.assertTrue("When the input is passed to HomeInteractor is FutureTrip" +
                 "Then getFutureFlights should be called in Worker",
-                flightWorkerInputSpy.isgetFlightsMethodCalled);
+                flightWorkerInputSpy.isgetFutureFlightsMethodCalled);
     }
 
     @Test
@@ -126,12 +126,12 @@ public class HomeInteractorUnitTest {
 
     private class FlightWorkerInputSpy implements FlightWorkerInput {
 
-        boolean isgetFlightsMethodCalled = false;
+        boolean isgetFutureFlightsMethodCalled = false;
         boolean isgetPastFlightsMethodCalled = false;
 
         @Override
         public ArrayList<FlightModel> getFutureFlights() {
-            isgetFlightsMethodCalled = true;
+            isgetFutureFlightsMethodCalled = true;
             ArrayList<FlightModel> flightsList = getFlightModels();
             return flightsList;
         }

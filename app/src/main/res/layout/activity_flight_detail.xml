@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+   android:orientation="horizontal"
     tools:context="com.mycompany.flightstatuslistview.detailScreen.FlightDetailActivity">
 
     <LinearLayout
         android:layout_width="0dp"
-        android:layout_height="match_parent"
+        android:layout_height="150dp"
         android:layout_weight="1"
         android:orientation="vertical">
         <TextView
@@ -17,7 +17,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:text="flightName"
-            android:textSize="24sp"
+            android:textSize="14sp"
             android:id="@id/flightName"/>
 
         <TextView
@@ -25,13 +25,13 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:text="startingTime"
-            android:textSize="24sp"
+            android:textSize="14sp"
             android:id="@id/startingTime"/>
 
     </LinearLayout>
     <LinearLayout
         android:layout_width="0dp"
-        android:layout_height="match_parent"
+        android:layout_height="150dp"
         android:layout_weight="1"
         android:orientation="vertical">
         <TextView
@@ -39,21 +39,21 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:text="checkInStatus"
-            android:textSize="24sp"
+            android:textSize="14sp"
             android:id="@id/checkInStatus"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:text="gate"
-            android:textSize="24sp"
+            android:textSize="14sp"
             android:id="@id/gate"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:text="terminal"
-            android:textSize="24sp"
+            android:textSize="14sp"
             android:id="@id/terminal"/>
 
     </LinearLayout>

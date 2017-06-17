@@ -9,6 +9,7 @@ import com.mycompany.flightstatuslistview.FlightViewModel;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 interface HomePresenterInput {
@@ -55,7 +56,7 @@ public class HomePresenter implements HomePresenterInput {
                 //Decoration
                 Calendar startingTime = getCalendar(fvm.startingTime);
                 long daysDiff = getDaysDiff(getCurrentTime().getTimeInMillis(),startingTime.getTimeInMillis());
-                setDaysFlyDecorationText(fvm, daysDiff);
+                setDaysFlyDecorationText(fvm, daysDiff,getCurrentTime().getTimeInMillis(),startingTime.getTimeInMillis());
 
                 homeViewModel.listOfFlights.add(fvm);
             }
@@ -65,11 +66,11 @@ public class HomePresenter implements HomePresenterInput {
         }
     }
 
-    private void setDaysFlyDecorationText(FlightViewModel fvm, long daysDiff) {
-        if(daysDiff >=0){
+    private void setDaysFlyDecorationText(FlightViewModel fvm, long daysDiff,long startTime,long endTime) {
+        if(endTime > startTime){
             fvm.noOfDaysToFly = "You have " + daysDiff + " days to fly";
         } else {
-            daysDiff =-daysDiff;
+            //daysDiff =-daysDiff;
             fvm.noOfDaysToFly = "It has been " + daysDiff + " days since you flew";
         }
     }
@@ -89,8 +90,12 @@ public class HomePresenter implements HomePresenterInput {
     }
 
     private long getDaysDiff(long startTime,long endTime) {
-
-        long msDiff = endTime - startTime;
+        long msDiff =0;
+        if (endTime > startTime) {
+             msDiff = endTime - startTime;
+        } else {
+             msDiff = startTime - endTime;
+        }
         long daysDiff = TimeUnit.MILLISECONDS.toDays(msDiff);
         Log.e(TAG,"diff is  "+ daysDiff);
         return daysDiff;

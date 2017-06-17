@@ -25,9 +25,9 @@ public class FlightDetailActivity extends AppCompatActivity {
 
         if(flightModel != null){
             TextView flightNameTextView = (TextView) findViewById(R.id.flightName);
-            flightNameTextView.setText(flightModel.flightName);
+            flightNameTextView.setText("Flight: "+flightModel.flightName);
             TextView startingTimeTextView = (TextView) findViewById(R.id.startingTime);
-            startingTimeTextView.setText(flightModel.startingTime);
+            startingTimeTextView.setText("Date: "+flightModel.startingTime);
 
 
 
@@ -54,13 +54,13 @@ public class FlightDetailActivity extends AppCompatActivity {
 
             if (daysDiff <= 30){
                 checkInStatus.setBackgroundColor(getResources().getColor(android.R.color.holo_green_light));
-                checkInStatus.setText("Check In Open");
+                checkInStatus.setText("Checkin open");
             } else  if (daysDiff <= 60){
                 checkInStatus.setBackgroundColor(getResources().getColor(android.R.color.holo_orange_light));
-                checkInStatus.setText("Check Not Open");
+                checkInStatus.setText("Checkin not Open");
             } else {
-                checkInStatus.setBackgroundColor(getResources().getColor(android.R.color.holo_blue_dark));
-                checkInStatus.setText("Check Not Open - Come back");
+                checkInStatus.setBackgroundColor(getResources().getColor(android.R.color.holo_purple));
+                checkInStatus.setText("Checkin not open - Come back");
             }
 
 
