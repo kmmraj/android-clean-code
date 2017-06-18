@@ -55,6 +55,7 @@ public class HomeActivity extends AppCompatActivity implements HomeActivityInput
     private void createFlightListView() {
         ListView listView = (ListView) findViewById(R.id.listOfFlights);
         listView.setAdapter(new FlightListAdapter());
+        listView.setClickable(true);
         listView.setOnItemClickListener(router);
     }
 
@@ -72,7 +73,7 @@ public class HomeActivity extends AppCompatActivity implements HomeActivityInput
 
         private LayoutInflater layoutInflater;
 
-        public FlightListAdapter(){
+        FlightListAdapter(){
             layoutInflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
         }
         @Override
@@ -94,17 +95,14 @@ public class HomeActivity extends AppCompatActivity implements HomeActivityInput
         public View getView(int position, View convertView, ViewGroup parent) {
 
             if(convertView == null){
-                convertView = layoutInflater.inflate(R.layout.cell_flight_status,null);
+                convertView = layoutInflater.inflate(R.layout.cell_trip_list,null);
                 ViewHolder viewHolder = new ViewHolder();
-                viewHolder.flightNameTextView = (TextView) convertView.findViewById(R.id.flightName);
-                viewHolder.startTimeTextView = (TextView) convertView.findViewById(R.id.startingTime);
-                //viewHolder.numberOfSeatsTextView = (TextView) convertView.findViewById(R.id.numberOfSeats);
-
+                viewHolder.flightNameTextView = (TextView) convertView.findViewById(R.id.tv_flightNumberValue);
+                viewHolder.startTimeTextView = (TextView) convertView.findViewById(R.id.tv_flightTimeDescription);
                 convertView.setTag(viewHolder);
             }
             ViewHolder viewHolder = (ViewHolder) convertView.getTag();
             viewHolder.flightNameTextView.setText( listOfVMFlights.get(position).flightName);
-            //viewHolder.numberOfSeatsTextView.setText( listOfVMFlights.get(position).numberofSeats);
             viewHolder.startTimeTextView.setText( listOfVMFlights.get(position).noOfDaysToFly);
             return convertView;
         }
@@ -113,6 +111,5 @@ public class HomeActivity extends AppCompatActivity implements HomeActivityInput
     class ViewHolder {
         TextView flightNameTextView;
         TextView startTimeTextView;
-        TextView numberOfSeatsTextView;
     }
 }

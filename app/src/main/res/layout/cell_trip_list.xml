@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryLight"
+    android:descendantFocusability="blocksDescendants">
+
+
+    <TextView
+        android:id="@+id/tv_flightNumberLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="4dp"
+        android:contentDescription="@string/flight_name"
+        android:text="@string/flight_name"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textIsSelectable="false"/>
+
+    <TextView
+        android:id="@+id/tv_flightNumberValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/tv_flightNumberLabel"
+        app:layout_constraintTop_toBottomOf="@id/tv_flightNumberLabel"
+        android:layout_marginTop="2dp"
+        android:contentDescription="@string/flight_name"
+        tools:text="@string/flight_code"
+        android:textColor="@color/colorPrimaryDark"/>
+
+    <ImageButton
+        android:id="@+id/ib_flight_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_flightTimeDescription"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_info_details"
+        android:clickable="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"/>
+
+    <TextView
+        android:id="@+id/tv_flightTimeDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:singleLine="false"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/tv_flightNumberLabel"
+        app:layout_constraintEnd_toStartOf="@+id/ib_flight_details"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        tools:text="It has been 272 days since you flew"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/colorPrimaryDark"/>
+
+
+</android.support.constraint.ConstraintLayout>

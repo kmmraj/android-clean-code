@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.AdapterView;
 
 import com.mycompany.flightstatuslistview.FlightModel;
-import com.mycompany.flightstatuslistview.detailScreen.FlightDetailActivity;
+import com.mycompany.flightstatuslistview.boardingScreen.FlightBoardingActivity;
 
 import java.lang.ref.WeakReference;
 
@@ -31,7 +31,7 @@ public class HomeRouter implements HomeRouterInput, AdapterView.OnItemClickListe
     @Override
     public Intent determineNextScreen(int position) {
         //Based on the position or someother data decide what is the next scene
-        Intent intent = new Intent(activity.get(),FlightDetailActivity.class);
+        Intent intent = new Intent(activity.get(),FlightBoardingActivity.class);
         return intent;
     }
 

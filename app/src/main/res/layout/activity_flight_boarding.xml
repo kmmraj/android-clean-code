@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView android:id="@+id/sv_topScroll"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_passengerLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/passenger_label"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"/>
+
+        <TextView
+            android:id="@+id/tv_passengerName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/passenger_name"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_passengerLabel"
+            app:layout_constraintLeft_toLeftOf="@+id/tv_passengerLabel"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="@color/colorPrimary" />
+
+        <ImageView
+            android:id="@+id/departureImageView"
+            android:layout_width="60dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/i18n_depature_airport_code"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_passengerName"
+            app:srcCompat="@drawable/shape_rectangle_stroke" />
+
+        <ImageView
+            android:id="@+id/arrivalImageView"
+            android:layout_width="60dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/i18n_arrival_airport_code"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_passengerName"
+            app:srcCompat="@drawable/shape_rectangle_stroke" />
+
+        <ImageView
+            android:id="@+id/lineView"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimaryLight"
+            android:contentDescription="@string/i18n_to"
+            app:layout_constraintBottom_toTopOf="@id/arrivalImageView"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toRightOf="@id/departureImageView"
+            app:layout_constraintRight_toLeftOf="@id/arrivalImageView"
+            app:layout_constraintTop_toBottomOf="@id/arrivalImageView"
+            app:srcCompat="@drawable/shape_rectangle_stroke" />
+
+        <TextView
+            tools:text="@string/origin_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewOriginAirport"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            app:layout_constraintBottom_toBottomOf="@+id/lineView"
+            app:layout_constraintRight_toRightOf="@+id/departureImageView"
+            app:layout_constraintTop_toBottomOf="@+id/lineView"
+            app:layout_constraintLeft_toLeftOf="@+id/departureImageView" />
+
+        <TextView
+            tools:text="@string/destination_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewDestinationAirport"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            app:layout_constraintBottom_toBottomOf="@+id/lineView"
+            app:layout_constraintRight_toRightOf="@+id/arrivalImageView"
+            app:layout_constraintTop_toBottomOf="@+id/lineView"
+            app:layout_constraintLeft_toLeftOf="@+id/arrivalImageView" />
+
+        <TextView
+            android:id="@+id/tv_boardingTimeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:text="@string/boarding_time_label"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/departureImageView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"/>
+
+        <TextView
+            android:id="@+id/tv_boardingTime"
+            android:layout_width="wrap_content"
+            android:layout_height="19dp"
+            tools:text="@string/boarding_time"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_boardingTimeLabel"
+            app:layout_constraintLeft_toLeftOf="@+id/tv_boardingTimeLabel"
+            android:textColor="@color/colorPrimary"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+            tools:layout_editor_absoluteY="230dp" />
+
+        <TextView
+            android:id="@+id/tv_flightNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/flight_code"
+            app:layout_constraintLeft_toLeftOf="@+id/departureImageView"
+            app:layout_constraintRight_toRightOf="@+id/arrivalImageView"
+            app:layout_constraintTop_toBottomOf="@+id/lineView"
+            android:layout_marginTop="16dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="@color/colorPrimary"/>
+
+        <TextView
+            android:id="@+id/tv_departureDateLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/depature_date"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/arrivalImageView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+            />
+
+
+
+        <TextView
+            android:id="@+id/tv_departureDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/depature_date_value"
+            app:layout_constraintEnd_toEndOf="@+id/tv_departureDateLabel"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_departureDateLabel"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"/>
+
+        <TextView
+            android:id="@+id/tv_departureTimeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/departure_time_label"
+            app:layout_constraintStart_toStartOf="@+id/tv_boardingTime"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_boardingTime"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"/>
+
+        <TextView
+            android:id="@+id/tv_departureTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/departure_time"
+            app:layout_constraintStart_toStartOf="@+id/tv_departureTimeLabel"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_departureTimeLabel"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+            android:textColor="@color/colorPrimary"/>
+
+
+        <TextView
+            android:id="@+id/tv_arrivalTimeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/arrival_time_label"
+            app:layout_constraintEnd_toEndOf="@+id/tv_departureDate"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_departureDate"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+
+        <TextView
+            android:id="@+id/tv_arrivalTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/arrival_time"
+            app:layout_constraintEnd_toEndOf="@+id/tv_arrivalTimeLabel"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_arrivalTimeLabel"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"/>
+
+        <ImageView
+            android:id="@+id/iv_tableHeader"
+            android:layout_width="0dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorPrimaryLight"
+            app:layout_constraintEnd_toEndOf="@+id/tv_arrivalTime"
+            app:layout_constraintStart_toStartOf="@+id/tv_departureTime"
+            app:layout_constraintTop_toBottomOf="@+id/tv_departureTime"
+            app:srcCompat="@drawable/shape_rectangle_stroke" />
+
+        <ImageView
+            android:id="@+id/iv_tableRow"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            app:srcCompat="@drawable/shape_rectangle_fill_light"
+            app:layout_constraintStart_toStartOf="@+id/iv_tableHeader"
+            app:layout_constraintTop_toBottomOf="@+id/iv_tableHeader"
+            app:layout_constraintEnd_toEndOf="@+id/iv_tableHeader"
+            android:background="@color/colorPrimaryDark"/>
+
+        <TextView
+            android:id="@+id/tv_terminalLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/terminal_label"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+
+            android:layout_marginTop="4dp"
+            app:layout_constraintTop_toTopOf="@id/iv_tableHeader"
+            app:layout_constraintStart_toStartOf="@id/iv_tableHeader"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp" />
+        <TextView
+            android:id="@+id/tv_seatLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@string/seat_label"
+            app:layout_constraintEnd_toEndOf="@+id/iv_tableHeader"
+
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+
+            android:layout_marginTop="4dp"
+            app:layout_constraintTop_toTopOf="@id/iv_tableHeader"
+            android:layout_marginRight="16dp" />
+
+        <TextView
+            android:id="@+id/tv_gateLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/gate_label"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+
+            android:layout_marginTop="4dp"
+            app:layout_constraintTop_toTopOf="@id/iv_tableHeader"
+            app:layout_constraintStart_toEndOf="@id/tv_terminalLabel"
+            app:layout_constraintEnd_toStartOf="@id/tv_seatLabel"
+            android:textAlignment="center"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp" />
+
+        <TextView
+            android:id="@+id/tv_terminalValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/tv_terminalLabel"
+            app:layout_constraintTop_toTopOf="@id/iv_tableRow"
+            android:layout_marginTop="8dp"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            tools:text="@string/terminal"
+            android:textColor="@android:color/white"/>
+
+        <TextView
+            android:id="@+id/tv_seatValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@+id/tv_seatLabel"
+            app:layout_constraintTop_toTopOf="@id/iv_tableRow"
+            android:layout_marginTop="8dp"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            tools:text="@string/seat"
+            android:textColor="@android:color/white"/>
+
+        <TextView
+            android:id="@+id/tv_gateValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/tv_terminalValue"
+            app:layout_constraintEnd_toStartOf="@id/tv_seatValue"
+            app:layout_constraintTop_toTopOf="@id/iv_tableRow"
+            android:layout_marginTop="8dp"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            tools:text="@string/gate"
+            android:textColor="@android:color/white"/>
+
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>
+
+

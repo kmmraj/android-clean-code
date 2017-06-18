@@ -1,5 +1,6 @@
 <resources>
-    <string name="app_name">MY TRIPS</string>
+    <string name="app_name">My Trips</string>
+    <string name="trip_details">Trip Detail</string>
     <string name="passenger_label">PASSENGER</string>
     <string name="passenger_name">MR. MOHAN KARATS</string>
     <string name="origin_code">BLR</string>
@@ -21,5 +22,9 @@
     <string name="seat">01A</string>
     <string name="depature_date">DEPARTURE DATE</string>
     <string name="depature_date_value">2018 Jan 15</string>
+    <string name="i18n_depature_airport_code">Depature Airport Code</string>
+    <string name="i18n_arrival_airport_code">Arrival Airport Code</string>
+    <string name="i18n_to">To Airport</string>
+    <string name="flight_name">FLIGHT</string>
 
 </resources>
