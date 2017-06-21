@@ -2,7 +2,6 @@ package com.mycompany.flightstatuslistview;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.os.StrictMode;
 
 /**
  * Created by mkaratadipalayam on 20/09/16.
@@ -11,20 +10,20 @@ public class FlightModel implements Parcelable {
 
     public String flightName;
     public String startingTime;
-    public String numberofSeats;
-    public String gate;
-    public String terminal;
-    public String checkInStatus;
+    public String departureCity;
+    public String arrivalCity;
+    public String departureTime;
+    public String arrivalTime;
 
     public FlightModel() {}
 
     protected FlightModel(Parcel in) {
         flightName = in.readString();
         startingTime = in.readString();
-        numberofSeats = in.readString();
-        gate = in.readString();
-        terminal = in.readString();
-        checkInStatus = in.readString();
+        departureCity = in.readString();
+        arrivalCity = in.readString();
+        departureTime = in.readString();
+        arrivalTime = in.readString();
     }
 
     public static final Creator<FlightModel> CREATOR = new Creator<FlightModel>() {
@@ -48,9 +47,9 @@ public class FlightModel implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(flightName);
         dest.writeString(startingTime);
-        dest.writeString(numberofSeats);
-        dest.writeString(gate);
-        dest.writeString(terminal);
-        dest.writeString(checkInStatus);
+        dest.writeString(departureCity);
+        dest.writeString(arrivalCity);
+        dest.writeString(departureTime);
+        dest.writeString(arrivalTime);
     }
 }

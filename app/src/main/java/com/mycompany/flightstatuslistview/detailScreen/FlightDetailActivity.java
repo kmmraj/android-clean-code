@@ -13,8 +13,8 @@ import java.util.concurrent.TimeUnit;
 
 public class FlightDetailActivity extends AppCompatActivity {
 
-    FlightModel flightModel;
-    public static final String TAG = FlightDetailActivity.class.getSimpleName();
+    private FlightModel flightModel;
+    private static final String TAG = FlightDetailActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +44,7 @@ public class FlightDetailActivity extends AppCompatActivity {
 
             Calendar startingTime = Calendar.getInstance();
             startingTime.set(year,month-1,day,0,0,0);
-            Calendar currentTime = Calendar.getInstance();
+            //Calendar currentTime = Calendar.getInstance();
             //Log.e(TAG,"Current Time is : "+ currentTime.getTime());
 
             long msDiff = startingTime.getTimeInMillis() - Calendar.getInstance().getTimeInMillis();
@@ -66,10 +66,10 @@ public class FlightDetailActivity extends AppCompatActivity {
 
 
 
-            TextView gate = (TextView) findViewById(R.id.gate);
-            gate.setText("Gate: "+flightModel.gate);
-            TextView terminal = (TextView) findViewById(R.id.terminal);
-            terminal.setText("Terminal: "+flightModel.terminal);
+//            TextView arrivalCity = (TextView) findViewById(R.id.arrivalCity);
+//            arrivalCity.setText("Gate: "+flightModel.arrivalCity);
+//            TextView departureTime = (TextView) findViewById(R.id.departureTime);
+//            departureTime.setText("Terminal: "+flightModel.departureTime);
 
 
         }

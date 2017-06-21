@@ -18,8 +18,13 @@ import java.util.ArrayList;
 
 
  interface HomeActivityInput {
-    public void displayHomeMetaData(HomeViewModel viewModel);
+    void displayHomeMetaData(HomeViewModel viewModel);
 }
+
+//interface HomeRouterOutput {
+//    ArrayList<FlightViewModel> listOfVMFlights = null;
+//     HomeRouter router = null;
+//}
 
 
 
@@ -27,8 +32,8 @@ public class HomeActivity extends AppCompatActivity implements HomeActivityInput
 
     public ArrayList<FlightViewModel> listOfVMFlights;
 
-    protected HomeInteractorInput output;
-    protected HomeRouter router;
+    HomeInteractorInput output;
+    HomeRouter router;
 
     public static String TAG = HomeActivity.class.getSimpleName();
 

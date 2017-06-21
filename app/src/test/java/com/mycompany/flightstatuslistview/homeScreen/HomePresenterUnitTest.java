@@ -79,9 +79,10 @@ public class HomePresenterUnitTest {
         FlightModel flight1 = new FlightModel();
         flight1.flightName = "9Z 231";
         flight1.startingTime = "2017/12/31";
-        flight1.numberofSeats = "6";
-        flight1.gate = "33";
-        flight1.terminal = "T1";
+        flight1.departureCity = "BLR";
+        flight1.arrivalCity = "CJB";
+        flight1.departureTime = "18:10";
+        flight1.arrivalTime = "19:00";
         flightsList.add(flight1);
         homeResponse.listOfFlights = flightsList;
 
@@ -113,9 +114,10 @@ public class HomePresenterUnitTest {
         FlightModel flight1 = new FlightModel();
         flight1.flightName = "9Z 231";
         flight1.startingTime = "2016/10/01";
-        flight1.numberofSeats = "6";
-        flight1.gate = "33";
-        flight1.terminal = "T1";
+        flight1.departureCity = "BLR";
+        flight1.arrivalCity = "CJB";
+        flight1.departureTime = "18:10";
+        flight1.arrivalTime = "19:00";
 
         flightsList.add(flight1);
 

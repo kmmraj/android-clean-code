@@ -10,6 +10,7 @@ android {
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
         release {
@@ -29,15 +30,3 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
 }
 
-apply plugin: 'maven'
-
-/*
-TODO to check whether this is needed ?
- */
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            repository(url: "file:///~.m2/")
-        }
-    }
-}

@@ -16,7 +16,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".detailScreen.FlightDetailActivity"></activity>
-        <activity android:name=".boardingScreen.FlightBoardingActivity"></activity>
+        <activity android:name=".boardingScreen.BoardingActivity"></activity>
+        <activity android:name=".pastTripScreen.PastTripActivity"></activity>
     </application>
 
 </manifest>

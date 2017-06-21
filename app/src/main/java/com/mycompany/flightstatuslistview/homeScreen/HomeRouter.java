@@ -6,9 +6,14 @@ import android.view.View;
 import android.widget.AdapterView;
 
 import com.mycompany.flightstatuslistview.FlightModel;
-import com.mycompany.flightstatuslistview.boardingScreen.FlightBoardingActivity;
+import com.mycompany.flightstatuslistview.boardingScreen.BoardingActivity;
+import com.mycompany.flightstatuslistview.pastTripScreen.PastTripActivity;
+
 
 import java.lang.ref.WeakReference;
+import java.util.Calendar;
+
+import util.CalendarUtil;
 
 /**
  * Created by mkaratadipalayam on 10/10/16.
@@ -17,22 +22,40 @@ import java.lang.ref.WeakReference;
 
 
 interface HomeRouterInput{
-    public Intent determineNextScreen(int position);
-    public void passDataToNextScene(int position, Intent intent);
+    Intent determineNextScreen(int position);
+    void passDataToNextScene(int position, Intent intent);
 }
 
 public class HomeRouter implements HomeRouterInput, AdapterView.OnItemClickListener {
 
     public static String TAG = HomeRouter.class.getSimpleName();
     public WeakReference<HomeActivity> activity;
+    private Calendar currentTime;
+
+
+    public Calendar getCurrentTime() {
+        if(currentTime == null) return Calendar.getInstance();
+        return currentTime;
+    }
+    public void setCurrentTime(Calendar currentTime) {
+        this.currentTime = currentTime;
+    }
+
 
 
     @NonNull
     @Override
     public Intent determineNextScreen(int position) {
         //Based on the position or someother data decide what is the next scene
-        Intent intent = new Intent(activity.get(),FlightBoardingActivity.class);
-        return intent;
+
+        FlightModel flight = activity.get().listOfVMFlights.get(position);
+        Calendar startingTime = CalendarUtil.getCalendar(flight.startingTime);
+
+        if(isFutureFlight(startingTime)) {
+            return new Intent(activity.get(), BoardingActivity.class);
+        } else {
+            return new Intent(activity.get(), PastTripActivity.class);
+        }
     }
 
     @Override
@@ -50,5 +73,10 @@ public class HomeRouter implements HomeRouterInput, AdapterView.OnItemClickListe
         activity.get().startActivity(intent);
     }
 
+    private boolean isFutureFlight(Calendar startingTime){
+        long startTimeInMills = startingTime.getTimeInMillis();
+        long currentTimeInMills = getCurrentTime().getTimeInMillis();
+        return startTimeInMills >= currentTimeInMills;
+    }
 
 }

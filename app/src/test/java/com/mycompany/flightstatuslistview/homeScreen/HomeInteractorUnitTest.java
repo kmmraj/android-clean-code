@@ -56,8 +56,7 @@ public class HomeInteractorUnitTest {
         homeRequest.isFutureTrips = true;
 
         //Setup TestDoubles
-        HomePresenterInputSpy homePresenterInputSpy = new HomePresenterInputSpy();
-        homeInteractor.output = homePresenterInputSpy;
+        homeInteractor.output = new HomePresenterInputSpy();
         FlightWorkerInputSpy flightWorkerInputSpy = new FlightWorkerInputSpy();
         homeInteractor.setFlightWorkerInput(flightWorkerInputSpy);
 
@@ -78,8 +77,7 @@ public class HomeInteractorUnitTest {
         homeRequest.isFutureTrips = false;
 
         //Setup TestDoubles
-        HomePresenterInputSpy homePresenterInputSpy = new HomePresenterInputSpy();
-        homeInteractor.output = homePresenterInputSpy;
+        homeInteractor.output = new HomePresenterInputSpy();
         FlightWorkerInputSpy flightWorkerInputSpy = new FlightWorkerInputSpy();
         homeInteractor.setFlightWorkerInput(flightWorkerInputSpy);
 
@@ -101,8 +99,7 @@ public class HomeInteractorUnitTest {
         homeRequest.isFutureTrips = false;
 
         //Setup TestDoubles
-        HomePresenterInputSpy homePresenterInputSpy = new HomePresenterInputSpy();
-        homeInteractor.output = homePresenterInputSpy;
+        homeInteractor.output = new HomePresenterInputSpy();
         FlightWorkerInputReturnNullSpy flightWorkerInputReturnNullSpy = new FlightWorkerInputReturnNullSpy();
         homeInteractor.setFlightWorkerInput(flightWorkerInputReturnNullSpy);
 
@@ -132,15 +129,13 @@ public class HomeInteractorUnitTest {
         @Override
         public ArrayList<FlightModel> getFutureFlights() {
             isgetFutureFlightsMethodCalled = true;
-            ArrayList<FlightModel> flightsList = getFlightModels();
-            return flightsList;
+            return getFlightModels();
         }
 
         @Override
         public ArrayList<FlightModel> getPastFlights() {
             isgetPastFlightsMethodCalled = true;
-            ArrayList<FlightModel> flightsList = getFlightModels();
-            return flightsList;
+            return getFlightModels();
         }
 
         @NonNull
@@ -149,9 +144,10 @@ public class HomeInteractorUnitTest {
             FlightModel flight1 = new FlightModel();
             flight1.flightName = "9Z 231";
             flight1.startingTime = "2016/10/31";
-            flight1.numberofSeats = "6";
-            flight1.gate = "33";
-            flight1.terminal = "T1";
+            flight1.departureCity = "BLR";
+            flight1.arrivalCity = "CJB";
+            flight1.departureTime = "18:10";
+            flight1.arrivalTime = "19:00";
             flightsList.add(flight1);
             return flightsList;
         }

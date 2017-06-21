@@ -26,5 +26,7 @@
     <string name="i18n_arrival_airport_code">Arrival Airport Code</string>
     <string name="i18n_to">To Airport</string>
     <string name="flight_name">FLIGHT</string>
+    <string name="pnr_label">PNR</string>
+    <string name="pnr_value">Z1Y2X3</string>
 
 </resources>

@@ -9,11 +9,10 @@ import com.mycompany.flightstatuslistview.FlightViewModel;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 interface HomePresenterInput {
-    public void presentHomeMetaData(HomeResponse response);
+    void presentHomeMetaData(HomeResponse response);
 }
 
 public class HomePresenter implements HomePresenterInput {
@@ -48,11 +47,12 @@ public class HomePresenter implements HomePresenterInput {
             for (FlightModel fm : response.listOfFlights) {
                 FlightViewModel fvm = new FlightViewModel();
 
-                fvm.checkInStatus = fm.checkInStatus;
-                fvm.terminal = fm.terminal;
-                fvm.gate = fm.gate;
+                fvm.departureCity = fm.departureCity;
+                fvm.arrivalCity = fm.arrivalCity;
                 fvm.flightName = fm.flightName;
                 fvm.startingTime = fm.startingTime;
+                fvm.departureTime = fm.departureTime;
+                fvm.arrivalTime = fm.arrivalTime;
                 //Decoration
                 Calendar startingTime = getCalendar(fvm.startingTime);
                 long daysDiff = getDaysDiff(getCurrentTime().getTimeInMillis(),startingTime.getTimeInMillis());
@@ -90,7 +90,7 @@ public class HomePresenter implements HomePresenterInput {
     }
 
     private long getDaysDiff(long startTime,long endTime) {
-        long msDiff =0;
+        long msDiff;
         if (endTime > startTime) {
              msDiff = endTime - startTime;
         } else {

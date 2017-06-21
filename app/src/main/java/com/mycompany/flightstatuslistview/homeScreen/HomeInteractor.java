@@ -9,7 +9,7 @@ import com.mycompany.flightstatuslistview.ArrayEmptyException;
  */
 
 interface HomeInteractorInput {
-    public void fetchHomeMetaData(HomeRequest request);
+    void fetchHomeMetaData(HomeRequest request);
 }
 
 public class HomeInteractor implements HomeInteractorInput{
@@ -35,7 +35,7 @@ public class HomeInteractor implements HomeInteractorInput{
         Log.e(TAG,"In method fetchHomeMetaData");
         flightWorkerInput = getFlightWorkerInput();
         HomeResponse homeResponse = new HomeResponse();
-        if(request.isFutureTrips == true) {
+        if(request.isFutureTrips) {
             homeResponse.listOfFlights = flightWorkerInput.getFutureFlights();
         } else {
             homeResponse.listOfFlights = flightWorkerInput.getPastFlights();
