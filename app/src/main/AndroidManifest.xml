@@ -15,9 +15,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".detailScreen.FlightDetailActivity"></activity>
-        <activity android:name=".boardingScreen.BoardingActivity"></activity>
-        <activity android:name=".pastTripScreen.PastTripActivity"></activity>
+        <activity android:name=".detailScreen.FlightDetailActivity"/>
+        <activity android:name=".boardingScreen.BoardingActivity"/>
+        <activity android:name=".pastTripScreen.PastTripActivity"/>
     </application>
 
 </manifest>

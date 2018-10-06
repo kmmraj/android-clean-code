@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <item name="listOfFlights" type="id">listOfFlights</item>
-    <item name="numberOfSeats" type="id">numberOfSeats</item>
-    <item name="flightName" type="id">flightName</item>
-    <item name="startingTime" type="id">startingTime</item>
-    <item name="gate" type="id">gate</item>
-    <item name="terminal" type="id">terminal</item>
-    <item name="checkInStatus" type="id">checkInStatus</item>
+    <item name="listOfFlights" type="id"/>
+    <item name="numberOfSeats" type="id"/>
+    <item name="flightName" type="id"/>
+    <item name="startingTime" type="id"/>
+    <item name="gate" type="id"/>
+    <item name="terminal" type="id"/>
+    <item name="checkInStatus" type="id"/>
 </resources>
