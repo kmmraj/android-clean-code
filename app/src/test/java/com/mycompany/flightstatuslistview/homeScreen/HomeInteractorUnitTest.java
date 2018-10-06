@@ -21,7 +21,6 @@ import java.util.ArrayList;
  * Created by mkaratadipalayam on 12/10/16.
  */
 @RunWith(RobolectricTestRunner.class)
-//@Config(constants = BuildConfig.class, manifest = "app/src/main/AndroidManifest.xml", sdk = 21)
 public class HomeInteractorUnitTest {
     @Before
     public void setUp(){

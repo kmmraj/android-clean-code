@@ -3,7 +3,6 @@ package com.mycompany.flightstatuslistview.homeScreen;
 
 import android.content.Intent;
 
-import com.mycompany.flightstatuslistview.BuildConfig;
 import com.mycompany.flightstatuslistview.FlightViewModel;
 import com.mycompany.flightstatuslistview.boardingScreen.BoardingActivity;
 import com.mycompany.flightstatuslistview.pastTripScreen.PastTripActivity;
@@ -15,8 +14,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
-import org.robolectric.RobolectricTestRunner;
-import org.robolectric.annotation.Config;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -26,7 +23,6 @@ import java.util.Calendar;
  */
 
 @RunWith(RobolectricTestRunner.class)
-//@Config(constants = BuildConfig.class, manifest = "app/src/main/AndroidManifest.xml", sdk = 21)
 public class HomeRouterUnitTest {
     public static String TAG = HomeRouterUnitTest.class.getSimpleName();
 

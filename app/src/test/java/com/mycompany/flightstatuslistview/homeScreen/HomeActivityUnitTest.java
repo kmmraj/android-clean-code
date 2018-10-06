@@ -1,23 +1,18 @@
 package com.mycompany.flightstatuslistview.homeScreen;
 
-import com.mycompany.flightstatuslistview.BuildConfig;
-
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-
 import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
-import org.robolectric.annotation.Config;
 
 /**
  * Created by mkaratadipalayam on 13/10/16.
  */
 
 @RunWith(RobolectricTestRunner.class)
-//@Config(constants = BuildConfig.class, manifest = "app/src/main/AndroidManifest.xml", sdk = 27)
 public class HomeActivityUnitTest {
     @Before
     public void setUp(){}
